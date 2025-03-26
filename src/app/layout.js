@@ -8,9 +8,12 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
       </head>
       <body style={{ backgroundColor: '#F4F6F9' }}>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "25px", padding: "20px" }}>
+        <div style={{  display: "flex",
+    minHeight: "100vh",
+    overflow: "hidden"}}>
          <SideBar />
-          <main className="p-2" style={{ flex: 1, overflowX: "auto" }}>
+          <main className="p-2" style={{ flex: 1, overflowX: "auto",display: "flex" , justifyContent: "center",
+      alignItems: "center" }}>
             {children}
           </main>
         </div>

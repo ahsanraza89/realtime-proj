@@ -75,15 +75,21 @@ export default function SideBar({ children }) {
       )}
 
  
-      <div 
-        style={{
-          marginLeft: isOpen ? "220px" : "0px",  
-          transition: "margin-left 0.3s",
-          padding: "20px",
-        }}
-      >
-        {children}
-      </div>
+<div 
+  style={{
+    marginLeft: isOpen ? "220px" : "0px",  
+    transition: "margin-left 0.3s",
+    padding: "20px",
+    minHeight: "100vh", 
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    boxSizing: "border-box"
+  }}
+>
+  {children}
+</div>
+
     </>
   );
 }
