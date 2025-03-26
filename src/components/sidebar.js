@@ -1,39 +1,89 @@
+"use client"
+import { useState } from "react";
 import Link from "next/link";
+import { FiMenu } from "react-icons/fi";
 
-export default function SideBar() {
+export default function SideBar({ children }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => setIsOpen(!isOpen);
+
   return (
-    <div 
-      style={{
-        borderRight: "2px solid #ccc",
-        minHeight: "91vh",
-        padding: "25px 15px",
-        minWidth: "180px",  
-        maxWidth: "220px",   
-        overflowX: "auto"    
-      }}
-    >
-      <ul className="list-unstyled" style={{ marginTop: "10px" }}>
-        <li style={{ marginBottom: "15px", paddingRight: "20px" }}>
-          <Link className="text-decoration-none" style={{ color: "#6f42c1" }} href="/pakage">
-            <b>Package & Addons <br /> Management</b>
-          </Link>
-        </li>
-        <li style={{ marginBottom: "15px", paddingRight: "20px" }}>
-          <Link className="text-decoration-none" style={{ color: "#6f42c1" }} href="/accountDetails">
-            <b>Account Details</b>
-          </Link>
-        </li>
-        <li style={{ marginBottom: "15px", paddingRight: "20px" }}>
-          <Link className="text-decoration-none" style={{ color: "#6f42c1" }} href="/payments">
-            <b>Invoices & Payments</b>
-          </Link>
-        </li>
-        <li style={{ marginBottom: "15px", paddingRight: "20px" }}>
-          <Link className="text-decoration-none" style={{ color: "#6f42c1" }} href="/reqHelp">
-            <b>Request Help</b>
-          </Link>
-        </li>
-      </ul>
-    </div>
+    <>
+   
+      <div 
+        style={{
+          display: "flex",
+          alignItems: "center",
+          padding: "10px",
+          cursor: "pointer",
+          backgroundColor: "#6f42c1",
+          color: "white",
+          position: "fixed",
+          top: "10px",
+          left: "10px",
+          zIndex: 1000,
+          borderRadius: "50%",
+          width: "40px",
+          height: "40px",
+          justifyContent: "center",
+        }}
+        onClick={toggleSidebar}
+      >
+        <FiMenu size={20} />
+      </div>
+
+   
+      {isOpen && (
+        <div 
+          style={{
+            position: "fixed",
+            top: "0",
+            left: "0",
+            width: "220px",
+            height: "100vh",
+            backgroundColor: "#f4f4f4",
+            padding: "25px 15px",
+            borderRight: "2px solid #ccc",
+            zIndex: 999,
+            overflowY: "auto",
+          }}
+        >
+          <ul className="list-unstyled mt-5">
+            <li style={{ marginBottom: "15px" }}>
+              <Link href="/pakage" className="text-decoration-none" style={{ color: "#6f42c1" }}>
+                <b>Package & Addons Management</b>
+              </Link>
+            </li>
+            <li style={{ marginBottom: "15px" }}>
+              <Link href="/accountDetails" className="text-decoration-none" style={{ color: "#6f42c1" }}>
+                <b>Account Details</b>
+              </Link>
+            </li>
+            <li style={{ marginBottom: "15px" }}>
+              <Link href="/payments" className="text-decoration-none" style={{ color: "#6f42c1" }}>
+                <b>Invoices & Payments</b>
+              </Link>
+            </li>
+            <li style={{ marginBottom: "15px" }}>
+              <Link href="/reqHelp" className="text-decoration-none" style={{ color: "#6f42c1" }}>
+                <b>Request Help</b>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
+
+ 
+      <div 
+        style={{
+          marginLeft: isOpen ? "220px" : "0px",  
+          transition: "margin-left 0.3s",
+          padding: "20px",
+        }}
+      >
+        {children}
+      </div>
+    </>
   );
 }
