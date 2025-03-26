@@ -11,7 +11,7 @@ export default function Page() {
     { id: 1012, date: '09-05-2024', amount: '108.00 OMR', service: 'New Account', status: 'Paid' ,option : "Download"},
   ]
   return (
-    <div className="p-3 bg-white rounded shadow-sm mt-3" style={{ maxWidth: '95%', margin: 'auto', fontSize: '13px' }}>
+    <div className="p-3 bg-white rounded shadow-sm mt-10 justify-content-center align-items-center" style={{ maxWidth: '95%', margin: 'auto', fontSize: '13px' }}>
       <h6 className='ms-3 '>Invoice & Payments</h6>
       <p className='ms-3 mb-4'>All Payments you have made</p>
 

@@ -6,7 +6,7 @@ export default function Account() {
     <div className="d-flex " style={{ gap: '50px',   }}>
 
     
-      <div className="p-3 bg-white rounded shadow-sm mt-3" style={{ maxWidth: '95%', margin: 'auto', fontSize: '13px' ,borderRadius: '12px', }}>
+      <div className="p-3 bg-white rounded shadow-sm mt-10 justify-content-center align-items-center " style={{ maxWidth: '95%', margin: 'auto', fontSize: '13px' ,borderRadius: '12px', }}>
         <h6 className="ms-2">Account Details</h6>
         <p className="ms-2 mb-4" style={{ color: 'gray' }}>Contract Details and Contacts</p>
 

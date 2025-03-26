@@ -12,6 +12,8 @@ export default function Page() {
         fontSize: "13px",
         margin: "20px auto", 
         width: "90%", 
+        overflow: "hidden"
+        
       }}
     >
       <h6 className='ms-3'>Request Help</h6>
@@ -19,7 +21,7 @@ export default function Page() {
         We are at your service and always strive to improve services.
       </p>
 
-      <div className='d-flex flex-wrap gap-3 ms-3'>
+      <div className='d-flex flex-wrap gap-3 ms-3 mt-10 justify-content-center' >
         <p className='border p-2 rounded-pill flex-grow-1' style={{ minWidth: "200px" }}>
           <b>Unite Arab Emirates and other countries</b> +971 50 2008 155
         </p>
